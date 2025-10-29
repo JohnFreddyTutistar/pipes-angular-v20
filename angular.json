@@ -5,7 +5,22 @@
   "projects": {
     "pipes-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "prefix": "app",
+          "style": "css",
+          "inlineStyle": false,
+          "inlineTemplate": false,
+          "skipTests": true,
+          "type": "component"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        },
+        "@schematics/angular:interface": {
+          "type": "interface"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -88,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a7e76497-ebd7-4c0e-9f0d-fd102c0bff65"
   }
 }
