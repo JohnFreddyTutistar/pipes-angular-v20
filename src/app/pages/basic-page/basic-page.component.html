@@ -1,6 +1,6 @@
-<section class="mx-5">
-  <h1 class="text-2xl font-bold">Pipes Básicos</h1>
-  <h3 class="text-xl font-thin">Pipes incluidos en Angular</h3>
+<section class="my-5">
+  <h1 class="text-4xl font-bold text-primary text-center">Pipes Básicos</h1>
+  <h3 class="text-xl font-thin text-center">Pipes incluidos en Angular</h3>
 </section>
 
 <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
@@ -18,7 +18,82 @@
 
   <div class="stat">
     <div class="stat-title">TitleCase Pipe</div>
-    <div class="stat-value">{{ fullName()  | titlecase}}</div>
+    <div class="stat-value">{{ fullName() | titlecase}}</div>
     <div class="stat-desc">{{ fullName() }}</div>
   </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | long | GMT-5</div>
+    <div class="stat-value">{{ customDate() | date : 'long' : 'GMT-5' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | short | GMT-4</div>
+    <div class="stat-value">{{ customDate() | date : 'short' : 'GMT-5' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date : 'dd/MM/yyyy' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | short | GMT-4</div>
+    <div class="stat-value">{{ customDate() | date : 'HH:mm:ss' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | short | GMT-4</div>
+    <div class="stat-value">{{ customDate() | date : 'EEEE d, MMMM' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="flex flex-row gap-2">
+  <h1 class="text-2xl font-bold">
+    Locale Actual: <span class="badge badge-accent">{{ currentLocale() }}</span>
+  </h1>
+
+  <button (click)="changeLocale('fr')" class="btn btn-primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><mask id="SVGuywqVbel"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#SVGuywqVbel)"><path fill="#eee" d="M167 0h178l25.9 252.3L345 512H167l-29.8-253.4z"/><path fill="#0052b4" d="M0 0h167v512H0z"/><path fill="#d80027" d="M345 0h167v512H345z"/></g></svg>
+    Changer en francais
+  </button>
+  <button (click)="changeLocale('en')" class="btn btn-primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><mask id="SVGuywqVbel"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#SVGuywqVbel)"><path fill="#eee" d="M256 0h256v64l-32 32l32 32v64l-32 32l32 32v64l-32 32l32 32v64l-256 32L0 448v-64l32-32l-32-32v-64z"/><path fill="#d80027" d="M224 64h288v64H224Zm0 128h288v64H256ZM0 320h512v64H0Zm0 128h512v64H0Z"/><path fill="#0052b4" d="M0 0h256v256H0Z"/><path fill="#eee" d="m187 243l57-41h-70l57 41l-22-67zm-81 0l57-41H93l57 41l-22-67zm-81 0l57-41H12l57 41l-22-67zm162-81l57-41h-70l57 41l-22-67zm-81 0l57-41H93l57 41l-22-67zm-81 0l57-41H12l57 41l-22-67Zm162-82l57-41h-70l57 41l-22-67Zm-81 0l57-41H93l57 41l-22-67zm-81 0l57-41H12l57 41l-22-67Z"/></g></svg>
+    Change to english
+  </button>
+  <button (click)="changeLocale('es')" class="btn btn-primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><mask id="SVGuywqVbel"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#SVGuywqVbel)"><path fill="#d80027" d="m0 384l255.8-29.7L512 384v128H0z"/><path fill="#0052b4" d="m0 256l259.5-31L512 256v128H0z"/><path fill="#ffda44" d="M0 0h512v256H0z"/></g></svg>
+    Cambiar a español
+  </button>
 </div>
