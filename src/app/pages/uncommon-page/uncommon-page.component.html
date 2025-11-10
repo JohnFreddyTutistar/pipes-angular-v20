@@ -15,4 +15,52 @@
     <button [disabled]="clients().length === 0" (click)="deleteClient()" class="btn btn-primary">Borrar cliente</button>
   </app-card>
 
+  <app-card title="SlicePipe">
+    <b>Original</b>
+    <p class="text-primary">
+      {{ clients().join(', ') }}
+    </p>
+    <b>Slice: 0,2</b>
+    <p class="text-primary">
+      {{ clients() | slice:0:2 }}
+    </p>
+  </app-card>
+
+  <app-card title="JsonPipe">
+
+    <pre class="text-secondary">{{ clients() | json }}</pre>
+    <pre class="text-secondary">{{ client() | json }}</pre>
+    <p class="text-secondary">{{ clients().join(", ") | json | uppercase }}</p>
+
+  </app-card>
+
+  <app-card title="KeyValuePipe">
+
+    <!-- <pre>{{ profile | keyvalue | json}}</pre> -->
+     <ul>
+      @for (item of profile | keyvalue; track $index) {
+        <li>
+          <strong>{{ item.key | titlecase }}</strong>
+          <span class="text-accent">
+            {{ item.value }}
+          </span>
+        </li>
+      }
+     </ul>
+
+  </app-card>
+
+  <app-card title="AsyncPipe">
+    <p>{{ promiseValue | async}}</p>
+    @if( promiseValue | async; as value ){
+      <p class="text-primary">{{ value }}</p>
+    } @else {
+      <p class="text-warning">Espere por favor...</p>
+    }
+
+    <!--  -->
+    <h3>Observable</h3>
+    <p>{{ myObservableTimer | async}}</p>
+  </app-card>
+
 </div>

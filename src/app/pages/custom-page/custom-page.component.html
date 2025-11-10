@@ -1,1 +1,52 @@
-<p>custom-page works!</p>
+<section class="my-5">
+  <h1 class="text-4xl font-bold text-warning text-center">Pipes personalizados</h1>
+  <h3 class="text-xl font-thin text-center">No incluidos en Angular</h3>
+</section>
+
+<div class="stats shadow">
+  <div class="stat">
+    <div class="stat-title">ToggleCase Pipe</div>
+    <div class="stat-value">{{ name() | toggleCase : upperCase() }}</div>
+    <div class="stat-desc">{{ name() }}</div>
+
+    <button class="btn btn-primary mt-2" (click)="upperCase.set( !upperCase() )">ToggleCase</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div>
+  <h1 class="text-2xl font-bold">Pipes personaliados en acción</h1>
+
+  <div class="flex gap-2 justify-end w-full">
+    <button class="btn btn-primary">Por nombre</button>
+  </div>
+
+</div>
+
+<div class="overflow-x-auto w-full">
+  <table class="table table-xs w-full">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Puede volar</th>
+        <th>Color</th>
+        <th>Creador</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+       @for (heroe of heroes(); track $index) {
+         <tr>
+           <th>{{ $index + 1 }}</th>
+           <th>{{ heroe.name }}</th>
+           <td>{{ heroe.canFly }}</td>
+           <td>{{ heroe.color }}</td>
+           <td>{{ heroe.creator }}</td>
+         </tr>
+       }
+    </tbody>
+  </table>
+</div>
