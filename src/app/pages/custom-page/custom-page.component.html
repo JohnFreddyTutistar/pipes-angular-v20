@@ -56,11 +56,11 @@
            <td>
             <span
               class="text-xs w-44"
-              [style.color]="heroe.color | heroColor">
-              {{ heroe.color | heroColor}}
+              [style.color]="heroe.color | heroTextColor">
+              {{ heroe.color | heroColor | titlecase}}
             </span>
           </td>
-           <td>{{ heroe.creator }}</td>
+           <td>{{ heroe.creator | heroCreator }}</td>
          </tr>
        }
     </tbody>
